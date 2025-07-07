@@ -58,7 +58,6 @@ This template ships with OpenAI `gpt-4o` as the default. However, with the [AI S
 
 </div>
 
-
 ## Getting Started
 
 ### Quick Start Video Guide
@@ -126,6 +125,8 @@ Before you begin, ensure you have the following installed:
    ```bash
    NEXT_PUBLIC_SUPABASE_URL=<api-url>
    NEXT_PUBLIC_SUPABASE_ANON_KEY=<anon-key>
+   NEXT_PUBLIC_MCP_TOKEN=<mcp-token>      # Optional Notion MCP token
+   MCP_TOKEN=<mcp-token>                  # Same token for server-side calls
    ```
 
    > Find these values in your Supabase project dashboard under Project Settings > API
@@ -211,6 +212,8 @@ For more help, open an issue.
 # Required
 NEXT_PUBLIC_SUPABASE_URL=           # From Supabase project settings
 NEXT_PUBLIC_SUPABASE_ANON_KEY=      # From Supabase project settings
+NEXT_PUBLIC_MCP_TOKEN=              # Optional Notion MCP token
+MCP_TOKEN=                          # Same token for server-side calls
 OPENAI_API_KEY=                     # Your OpenAI API key
 ```
 
@@ -224,4 +227,3 @@ OPENAI_API_KEY=                     # Your OpenAI API key
 5. **Deploy**
    - Click "Deploy"
    - Vercel will automatically build and deploy your application
-
