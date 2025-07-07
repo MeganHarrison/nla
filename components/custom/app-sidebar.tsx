@@ -17,7 +17,10 @@ import {
   SidebarMenu,
   useSidebar,
 } from '@/components/ui/sidebar';
-import { BetterTooltip } from '@/components/ui/tooltip';
+import {
+  Tooltip,
+  TooltipContent as BetterTooltip,
+} from '@/components/ui/tooltip';
 
 export function AppSidebar({ user }: { user: User | null }) {
   const router = useRouter();
@@ -40,19 +43,21 @@ export function AppSidebar({ user }: { user: User | null }) {
                 Chatbot
               </span>
             </div>
-            <BetterTooltip content="New Chat" align="start">
-              <Button
-                variant="ghost"
-                className="p-2 h-fit"
-                onClick={() => {
-                  setOpenMobile(false);
-                  router.push('/');
-                  router.refresh();
-                }}
-              >
-                <PlusIcon />
-              </Button>
-            </BetterTooltip>
+            <Tooltip>
+              <BetterTooltip content="New Chat" align="start">
+                <Button
+                  variant="ghost"
+                  className="p-2 h-fit"
+                  onClick={() => {
+                    setOpenMobile(false);
+                    router.push('/');
+                    router.refresh();
+                  }}
+                >
+                  <PlusIcon />
+                </Button>
+              </BetterTooltip>
+            </Tooltip>
           </div>
         </SidebarMenu>
       </SidebarHeader>

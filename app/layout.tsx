@@ -4,11 +4,14 @@ import { Toaster } from 'sonner';
 import { ThemeProvider } from '@/components/custom/theme-provider';
 
 import './globals.css';
+import { AppSidebar } from '@/components/app-sidebar';
+import { SiteHeader } from '@/components/site-header';
+import { SidebarInset, SidebarProvider } from '@/components/ui/sidebar';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://chat.vercel.ai'),
-  title: 'Next.js Chatbot Template',
-  description: 'Next.js chatbot template using the AI SDK.',
+  metadataBase: new URL('https://nextlevelaiagents.com'),
+  title: 'Next Level AI Agents',
+  description: 'Taking Business to New Heights!',
 };
 
 export const viewport = {
@@ -63,10 +66,19 @@ export default async function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {/* <AuthProvider> */}
-          <Toaster position="top-center" />
-          {children}
-          {/* </AuthProvider> */}
+          <SidebarProvider>
+            <AppSidebar variant="inset" />
+            <SidebarInset>
+              <SiteHeader />
+              <div className="flex flex-1 flex-col">
+                <div className="@container/main flex flex-1 flex-col gap-2">
+                  <div className="flex flex-col gap-4 py-4 md:gap-6 md:py-6">
+                    <main>{children}</main>
+                  </div>
+                </div>
+              </div>
+            </SidebarInset>
+          </SidebarProvider>
         </ThemeProvider>
       </body>
     </html>
