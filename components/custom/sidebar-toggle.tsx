@@ -1,7 +1,7 @@
 import { ComponentProps } from 'react';
 
 import { SidebarTrigger, useSidebar } from '@/components/ui/sidebar';
-import { BetterTooltip } from '@/components/ui/tooltip';
+import { Tooltip } from '@/components/ui/tooltip';
 
 import { SidebarLeftIcon } from './icons';
 import { Button } from '../ui/button';
@@ -12,7 +12,7 @@ export function SidebarToggle({
   const { toggleSidebar } = useSidebar();
 
   return (
-    <BetterTooltip content="Toggle Sidebar" align="start">
+    <Tooltip>
       <Button
         onClick={toggleSidebar}
         variant="outline"
@@ -20,6 +20,6 @@ export function SidebarToggle({
       >
         <SidebarLeftIcon size={16} />
       </Button>
-    </BetterTooltip>
+    </Tooltip>
   );
 }
