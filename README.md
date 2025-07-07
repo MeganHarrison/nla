@@ -35,6 +35,7 @@
   - [Supabase File Storage](https://supabase.com/docs/guides/storage) for efficient file management and uploads
   - [Supabase Auth](https://supabase.com/docs/guides/auth) with multiple authentication providers and row-level security
   - Real-time subscriptions for live updates
+  - Notion MCP streaming via Server-Sent Events for real-time agent updates
 
 ## Model Providers
 

@@ -1,18 +1,18 @@
-'use client';
+'use client'
 
-import { useState } from 'react';
-import { useNotionSSE } from '@/hooks/use-notion-sse';
+import { useState } from 'react'
+import { useNotionSSE } from '@/hooks/use-notion-sse'
 
 export function ChatAgent() {
-  const { messages, error } = useNotionSSE();
-  const [input, setInput] = useState('');
-  const [local, setLocal] = useState<string[]>([]);
+  const { messages, error } = useNotionSSE()
+  const [input, setInput] = useState('')
+  const [local, setLocal] = useState<string[]>([])
 
   const handleSend = () => {
-    if (!input) return;
-    setLocal((prev) => [...prev, `You: ${input}`]);
-    setInput('');
-  };
+    if (!input) return
+    setLocal((prev) => [...prev, `You: ${input}`])
+    setInput('')
+  }
 
   return (
     <div className="flex flex-col gap-4 max-w-xl mx-auto p-4">
@@ -39,5 +39,5 @@ export function ChatAgent() {
         </button>
       </div>
     </div>
-  );
+  )
 }
